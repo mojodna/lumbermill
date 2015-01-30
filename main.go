@@ -45,7 +45,7 @@ func createInfluxDBClient(host string, skipVerify bool) influx.ClientConfig {
 		Username: os.Getenv("INFLUXDB_USER"), //"test",
 		Password: os.Getenv("INFLUXDB_PWD"),  //"tester",
 		Database: os.Getenv("INFLUXDB_NAME"), //"ingress",
-		IsSecure: true,
+		IsSecure: os.Getenv("INFLUXDB_IS_SECURE") != "false",
 		HttpClient: &http.Client{
 			Transport: &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: skipVerify},
 				ResponseHeaderTimeout: 5 * time.Second,
