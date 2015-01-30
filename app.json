@@ -27,6 +27,10 @@
         "INFLUXDB_SKIP_VERIFY": {
             "description": "Disable InfluxDB TLS verification",
             "value": "true"
+        },
+        "INFLUXDB_IS_SECURE": {
+            "description": "Is HTTPS enabled on your InfluxDB host?",
+            "value": "true"
         }
     }
 }
